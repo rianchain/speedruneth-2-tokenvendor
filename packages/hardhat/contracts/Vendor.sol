@@ -6,6 +6,7 @@ import "./YourToken.sol";
 
 contract Vendor {
   // event BuyTokens(address buyer, uint256 amountOfETH, uint256 amountOfTokens);
+  event BuyTokens(address buyer, uint256 amountOfETH, uint256 amountOfTokens);
 
   YourToken public yourToken;
 
@@ -14,6 +15,11 @@ contract Vendor {
   }
 
   // ToDo: create a payable buyTokens() function:
+  function buyTokens() public payable {
+    uint public constant tokenPerEth = 100;
+    yourToken.transfer(msg.sender, msg.value, tokenPerEth);
+
+  }
 
   // ToDo: create a withdraw() function that lets the owner withdraw ETH
 
