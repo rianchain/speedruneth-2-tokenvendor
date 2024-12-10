@@ -16,9 +16,11 @@ contract Vendor {
 
   // ToDo: create a payable buyTokens() function:
   function buyTokens() public payable {
-    uint public constant tokenPerEth = 100;
-    yourToken.transfer(msg.sender, msg.value, tokenPerEth);
+    uint public constant tokensPerEth = 100;
+    uint256 tokensToBuy = msg.value * tokensPerEth;
+    yourToken.transfer(msg.sender, msg.value, tokensPerEth);
 
+    emit BuyTokens(msg.sender, msg.value, tokensPerEth);
   }
 
   // ToDo: create a withdraw() function that lets the owner withdraw ETH
