@@ -9,6 +9,8 @@ contract Vendor {
   event BuyTokens(address buyer, uint256 amountOfETH, uint256 amountOfTokens);
 
   YourToken public yourToken;
+  uint256 public constant tokensPerEth = 100;
+
 
   constructor(address tokenAddress) {
     yourToken = YourToken(tokenAddress);
@@ -16,7 +18,6 @@ contract Vendor {
 
   // ToDo: create a payable buyTokens() function:
   function buyTokens() public payable {
-    uint public constant tokensPerEth = 100;
     uint256 tokensToBuy = msg.value * tokensPerEth;
     yourToken.transfer(msg.sender, msg.value, tokensPerEth);
 
