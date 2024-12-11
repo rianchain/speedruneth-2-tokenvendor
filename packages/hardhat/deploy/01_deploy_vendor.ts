@@ -34,7 +34,7 @@ const deployVendor: DeployFunction = async function (hre: HardhatRuntimeEnvironm
   //   // automatically mining the contract deployment transaction. There is no effect on live networks.
   //   autoMine: true,
   // });
-  // const vendor = await hre.ethers.getContract<Contract>("Vendor", deployer);
+  const vendor = await hre.ethers.getContract<Contract>("Vendor", deployer);
   const vendorAddress = await vendor.getAddress();
   // // Transfer tokens to Vendor
   await yourToken.transfer(vendorAddress, hre.ethers.parseEther("1000"));
