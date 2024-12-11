@@ -19,7 +19,7 @@ contract Vendor {
   // ToDo: create a payable buyTokens() function:
   function buyTokens() public payable {
     uint256 tokensToBuy = msg.value * tokensPerEth;
-    yourToken.transfer(msg.sender, msg.value, tokensPerEth);
+    yourToken.transfer(msg.sender, tokensPerEth);
 
     emit BuyTokens(msg.sender, msg.value, tokensPerEth);
   }
