@@ -1,6 +1,6 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
-// import { Contract } from "ethers";
+import { Contract } from "ethers";
 
 /**
  * Deploys a contract named "Vendor" using the deployer account and
@@ -35,9 +35,9 @@ const deployVendor: DeployFunction = async function (hre: HardhatRuntimeEnvironm
   //   autoMine: true,
   // });
   // const vendor = await hre.ethers.getContract<Contract>("Vendor", deployer);
-  // const vendorAddress = await vendor.getAddress();
+  const vendorAddress = await vendor.getAddress();
   // // Transfer tokens to Vendor
-  // await yourToken.transfer(vendorAddress, hre.ethers.parseEther("1000"));
+  await yourToken.transfer(vendorAddress, hre.ethers.parseEther("1000"));
   // // Transfer contract ownership to your frontend address
   // await vendor.transferOwnership("**YOUR FRONTEND ADDRESS**");
 };
