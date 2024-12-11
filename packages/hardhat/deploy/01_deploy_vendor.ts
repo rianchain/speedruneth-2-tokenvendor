@@ -24,7 +24,7 @@ const deployVendor: DeployFunction = async function (hre: HardhatRuntimeEnvironm
   const { deployer } = await hre.getNamedAccounts();
   const { deploy } = hre.deployments;
   const yourToken = await hre.ethers.getContract<Contract>("YourToken", deployer);
-  // const yourTokenAddress = await yourToken.getAddress();
+  const yourTokenAddress = await yourToken.getAddress();
   // await deploy("Vendor", {
   //   from: deployer,
   //   // Contract constructor arguments
