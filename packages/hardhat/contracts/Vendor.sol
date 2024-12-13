@@ -35,11 +35,13 @@ contract Vendor {
     require(_amount > 0, "You need to sell at leastt some tokens");
     require(yourToken.balanceOf(msg.sender) >= _amountm "you don't have enough token");
 
-    uint256 etherAmount = _amount . tokensPerEth;
+    uint256 etherAmount = _amount / tokensPerEth;
     require(address(this).balance >= etherAmount, "Vendor has insufient balances ");
 
     yourToken.transferFrom(msg.sender, address(this), _amount);
     
     payable(msg.sender).transfer(etherAmount);
+
+    emit SellTokens(msg.sender, _amount, etherAmount);
   }
 }
