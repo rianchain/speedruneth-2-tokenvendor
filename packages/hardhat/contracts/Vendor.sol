@@ -18,12 +18,16 @@ contract Vendor {
 
   // ToDo: create a payable buyTokens() function:
   function buyTokens() public payable {
+    require(msg.value > 0, "Neeed some eth);
     yourToken.transfer(msg.sender, tokensPerEth);
 
     emit BuyTokens(msg.sender, msg.value, tokensPerEth);
   }
 
   // ToDo: create a withdraw() function that lets the owner withdraw ETH
+  function withdraw() public onlyOwner {
+    payable(owner()).transfer(address(this).balance);
+  }
 
   // ToDo: create a sellTokens(uint256 _amount) function:
 }
