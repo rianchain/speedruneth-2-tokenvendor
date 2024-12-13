@@ -19,7 +19,7 @@ contract Vendor {
 
   // ToDo: create a payable buyTokens() function:
   function buyTokens() public payable {
-    require(msg.value > 0, "Neeed some eth);
+    require(msg.value > 0, "Neeed some eth");
     yourToken.transfer(msg.sender, tokensPerEth);
 
     emit BuyTokens(msg.sender, msg.value, tokensPerEth);
