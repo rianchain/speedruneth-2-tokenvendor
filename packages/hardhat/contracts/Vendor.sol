@@ -39,5 +39,7 @@ contract Vendor {
     require(address(this).balance >= etherAmount, "Vendor has insufient balances ");
 
     yourToken.transferFrom(msg.sender, address(this), _amount);
+    
+    payable(msg.sender).transfer(etherAmount);
   }
 }
