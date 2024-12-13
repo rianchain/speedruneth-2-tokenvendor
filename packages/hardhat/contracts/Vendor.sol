@@ -7,6 +7,7 @@ import "./YourToken.sol";
 contract Vendor {
   // event BuyTokens(address buyer, uint256 amountOfETH, uint256 amountOfTokens);
   event BuyTokens(address buyer, uint256 amountOfETH, uint256 amountOfTokens);
+  event SellTokens(address seller, uint256 amountOfTokens, uint256 amountOfETH);
 
   YourToken public yourToken;
   uint256 public constant tokensPerEth = 100;
@@ -30,4 +31,5 @@ contract Vendor {
   }
 
   // ToDo: create a sellTokens(uint256 _amount) function:
+  function sellToken
 }
