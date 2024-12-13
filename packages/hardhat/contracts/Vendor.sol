@@ -33,7 +33,7 @@ contract Vendor {
   // ToDo: create a sellTokens(uint256 _amount) function:
   function sellTokens(uint256 _amount) public {
     require(_amount > 0, "You need to sell at leastt some tokens");
-    require(yourToken.balanceOf(msg.sender) >= _amount "you don't have enough token");
+    require(yourToken.balanceOf(msg.sender) >= _amount, "you don't have enough token");
 
     uint256 etherAmount = _amount / tokensPerEth;
     require(address(this).balance >= etherAmount, "Vendor has insufient balances ");
