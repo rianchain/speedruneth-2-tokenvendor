@@ -31,5 +31,4 @@ const deployVendor: DeployFunction = async function (hre: HardhatRuntimeEnvironm
 
 export default deployVendor;
 
-// e.g. yarn deploy --tags Vendor
 deployVendor.tags = ["Vendor"];
