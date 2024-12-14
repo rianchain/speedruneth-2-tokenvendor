@@ -14,6 +14,7 @@ contract Vendor is Ownable {
   uint256 public constant tokensPerEth = 100;
 
 
+  // contructor adalah baris yang akan pertama kali di eksekusi dan di catat secara permanen
   constructor(address tokenAddress) {
     yourToken = YourToken(tokenAddress);
   }
