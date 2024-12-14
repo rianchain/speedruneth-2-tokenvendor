@@ -2,10 +2,8 @@ import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
 import { Contract } from "ethers";
 
-/**
  *
- * @param hre HardhatRuntimeEnvironment object.
- */
+  @param hre HardhatRuntimeEnvironment object.
 const deployVendor: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   
   // // Deploy Vendor
