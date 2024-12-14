@@ -10,7 +10,6 @@ const deployVendor: DeployFunction = async function (hre: HardhatRuntimeEnvironm
   /*
 
 
-    You can generate a random account with `yarn generate` which will fill DEPLOYER_PRIVATE_KEY
     with a random private key in the .env file (then used on hardhat.config.ts)
     You can run the `yarn account` command to check your balance in every network.
   */
