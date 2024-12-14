@@ -10,8 +10,6 @@ const deployVendor: DeployFunction = async function (hre: HardhatRuntimeEnvironm
   /*
 
 
-    with a random private key in the .env file (then used on hardhat.config.ts)
-    You can run the `yarn account` command to check your balance in every network.
   */
   // // Deploy Vendor
   const { deployer } = await hre.getNamedAccounts();
