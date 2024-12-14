@@ -7,10 +7,7 @@ import { Contract } from "ethers";
  * @param hre HardhatRuntimeEnvironment object.
  */
 const deployVendor: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
-  /*
-
-
-  */
+  
   // // Deploy Vendor
   const { deployer } = await hre.getNamedAccounts();
   const { deploy } = hre.deployments;
